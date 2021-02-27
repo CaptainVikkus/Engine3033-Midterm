@@ -9,7 +9,8 @@ public enum COLOR
     BLUE,
     YELLOW,
     PURPLE,
-    CYAN
+    CYAN,
+    CLEAR
 }
 
 public class ColorManager : Singleton<ColorManager>

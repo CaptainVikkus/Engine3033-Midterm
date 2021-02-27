@@ -8,7 +8,6 @@ public class PlayerController : MonoBehaviour
     private PlayerInput input;
     private CharacterController character;
     private AnimationManager animationManager;
-
     #region Look
     [Header("Camera")]
     public Camera camera;
