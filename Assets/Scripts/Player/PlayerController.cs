@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     private PlayerInput input;
     private CharacterController character;
+    private AnimationManager animationManager;
 
     #region Movement
     [Header("Movement")]
@@ -22,7 +23,6 @@ public class PlayerController : MonoBehaviour
     private Vector2 movement;
     #endregion
 
-    public AnimationManager animationManager;
 
     private void Awake()
     {
@@ -31,10 +31,12 @@ public class PlayerController : MonoBehaviour
     }
     private void OnEnable()
     {
+        ChangeColor((COLOR)(-1));
         input.Enable();
     }
     private void OnDisable()
     {
+        ChangeColor((COLOR)(-1));
         input.Disable();
     }
     void OnDrawGizmos()
@@ -67,6 +69,7 @@ public class PlayerController : MonoBehaviour
                 RenderSettings.skybox.color = Color.cyan;
                 break;
             default:
+                RenderSettings.skybox.color = Color.black;
                 break;
         }
     }
@@ -75,6 +78,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         character = GetComponent<CharacterController>();
+        animationManager = GetComponent<AnimationManager>();
         ColorManager.OnChangeColor += ChangeColor;
     }
 
@@ -82,6 +86,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         _Move();
+        _Animations();
     }
 
     private void _Move()

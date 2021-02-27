@@ -4,22 +4,23 @@ using UnityEngine;
 
 public class AnimationManager : MonoBehaviour
 {
-    private Animator animator;
+    public Animator animator;
     private int horizontal;
     private int vertical;
 
     private void Awake()
     {
-        animator = GetComponent<Animator>();
+        //animator = GetComponent<Animator>();
         horizontal = Animator.StringToHash("Horizontal");
         vertical = Animator.StringToHash("Vertical");
+        animator.applyRootMotion = false;
     }
 
-    public void UpdateAnimatorMovement(float horizontal, float vertical)
+    public void UpdateAnimatorMovement(float horizontalBlend, float verticalBlend)
     {
         //Maybe implement snapping here
-        animator.SetFloat(this.horizontal, horizontal, 0.1f, Time.deltaTime);
-        animator.SetFloat(this.vertical, vertical, 0.1f, Time.deltaTime);
+        animator.SetFloat(horizontal, horizontalBlend, 0.1f, Time.deltaTime);
+        animator.SetFloat(vertical, verticalBlend, 0.1f, Time.deltaTime);
     }
 
 }
