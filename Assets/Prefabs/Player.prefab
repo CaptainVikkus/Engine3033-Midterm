@@ -65,6 +65,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5060d51b968cb9645824a07032fa0137, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  camera: {fileID: 2105042202797700800}
+  sensitivity: 100
   speed: 5
   rotateSpeed: 15
   jumpHeight: 2.5

@@ -107,19 +107,8 @@
             "bindings": [
                 {
                     "name": "",
-                    "id": "baa2188a-37ee-4a52-bb0f-a7fc81bf6a79",
-                    "path": "<Mouse>/delta/x",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Mouse",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "cf49cb97-dd7b-4442-a5f9-4220fe7196f4",
-                    "path": "<Mouse>/delta/y",
+                    "id": "a67bf653-7b72-4768-ace5-ec05c025596d",
+                    "path": "<Mouse>/delta",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

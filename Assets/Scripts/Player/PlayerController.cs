@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,6 +8,13 @@ public class PlayerController : MonoBehaviour
     private PlayerInput input;
     private CharacterController character;
     private AnimationManager animationManager;
+
+    #region Look
+    [Header("Camera")]
+    public Camera camera;
+    public float sensitivity = 100.0f;
+    private float XRotation;
+    #endregion
 
     #region Movement
     [Header("Movement")]
@@ -33,6 +41,7 @@ public class PlayerController : MonoBehaviour
     {
         ChangeColor((COLOR)(-1));
         input.Enable();
+        Cursor.lockState = CursorLockMode.Locked;
     }
     private void OnDisable()
     {
@@ -86,7 +95,20 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         _Move();
+        _Look();
         _Animations();
+    }
+
+    private void _Look()
+    {
+        Vector2 mousePos = input.Look.Mouse.ReadValue<Vector2>() * sensitivity * Time.deltaTime;
+
+        XRotation -= mousePos.y;
+        XRotation = Mathf.Clamp(XRotation, -90.0f, 90.0f);
+
+        camera.transform.localRotation = Quaternion.Euler(XRotation, 0.0f, 0.0f);
+        transform.Rotate(Vector3.up * mousePos.x);
+        body.Rotate(Vector3.up * -mousePos.x);
     }
 
     private void _Move()
