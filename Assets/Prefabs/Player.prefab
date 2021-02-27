@@ -70,7 +70,7 @@ MonoBehaviour:
   sensitivity: 100
   speed: 5
   rotateSpeed: 15
-  jumpHeight: 2.5
+  jumpHeight: 1.5
   gravity: -30
   body: {fileID: 1926456279852691042}
   groundRadius: 0.25
