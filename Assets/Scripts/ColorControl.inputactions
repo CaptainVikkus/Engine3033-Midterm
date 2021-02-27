@@ -1,0 +1,147 @@
+{
+    "name": "ColorControl",
+    "maps": [
+        {
+            "name": "ColorChange",
+            "id": "612351d8-f7b8-4f5c-9aa2-283341d282d5",
+            "actions": [
+                {
+                    "name": "Wheel",
+                    "type": "PassThrough",
+                    "id": "4347d315-375c-4118-95d7-c15a56b52316",
+                    "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Red",
+                    "type": "Button",
+                    "id": "c97aafd1-c92e-4356-a17c-227bebbc877e",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Green",
+                    "type": "Button",
+                    "id": "00243e91-d55c-4d2a-8b66-80d6125e0d27",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Blue",
+                    "type": "Button",
+                    "id": "7dd92fc3-a52b-4268-b16c-913c51ca78c7",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Yellow",
+                    "type": "Button",
+                    "id": "9b0f315a-48e7-4afd-b572-cebcb62240f1",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Purple",
+                    "type": "Button",
+                    "id": "eb547155-3490-46c8-be37-bb0563e2e41f",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Cyan",
+                    "type": "Button",
+                    "id": "f34cc67f-8ceb-4b6c-a625-710b5b14d786",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "9ab6c54f-9b65-4220-a38f-3a84013a1c7c",
+                    "path": "<Keyboard>/1",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Red",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b450962c-2737-4807-bb52-57d884970e1b",
+                    "path": "<Keyboard>/2",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Green",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "341756e9-7d4d-40da-b9c3-3609ed193400",
+                    "path": "<Mouse>/scroll/y",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Wheel",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0c3f17cb-5929-47ae-b066-a2ca9b573578",
+                    "path": "<Keyboard>/3",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Blue",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "00fed61a-f336-4518-8e2b-15c456749493",
+                    "path": "<Keyboard>/4",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Yellow",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d9acf600-af60-4642-baeb-e2be9a6bee49",
+                    "path": "<Keyboard>/5",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Purple",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c93df1fa-019d-4733-8b4d-989bdde20efa",
+                    "path": "<Keyboard>/6",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Cyan",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
