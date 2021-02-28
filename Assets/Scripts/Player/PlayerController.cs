@@ -103,7 +103,7 @@ public class PlayerController : MonoBehaviour
         Vector2 mousePos = input.Look.Mouse.ReadValue<Vector2>() * sensitivity * Time.deltaTime;
 
         XRotation -= mousePos.y;
-        XRotation = Mathf.Clamp(XRotation, -90.0f, 90.0f);
+        XRotation = Mathf.Clamp(XRotation, -45.0f, 45.0f);
 
         camera.transform.localRotation = Quaternion.Euler(XRotation, 0.0f, 0.0f);
         transform.Rotate(Vector3.up * mousePos.x);

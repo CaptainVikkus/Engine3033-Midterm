@@ -39,6 +39,7 @@ public class GameManager : Singleton<GameManager>
     public static int score = 0;
     public Timer timer;
     public TextMeshProUGUI timerUI;
+    public TextMeshProUGUI scoreUI;
 
     // Start is called before the first frame update
     void Start()
@@ -51,6 +52,7 @@ public class GameManager : Singleton<GameManager>
     {
         timer.AddTime(Time.deltaTime);
         timerUI.text = "Time: " + timer.PrintTime();
+        scoreUI.text = "Score: " + score;
     }
 
     //True to activate cursor and disable input, false to return
@@ -58,5 +60,13 @@ public class GameManager : Singleton<GameManager>
     {
         player.enabled = !activateUI;
         Cursor.lockState = activateUI ? CursorLockMode.None : CursorLockMode.Locked;
+    }
+
+    public void ResetCrystals()
+    {
+       foreach (Crystal item in FindObjectsOfType<Crystal>())
+        {
+            item.EnableCollect();
+        }
     }
 }
