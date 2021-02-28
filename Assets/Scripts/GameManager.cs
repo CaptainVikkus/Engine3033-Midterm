@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 
 public class Timer
 {
@@ -40,11 +40,14 @@ public class GameManager : Singleton<GameManager>
     public Timer timer;
     public TextMeshProUGUI timerUI;
     public TextMeshProUGUI scoreUI;
+    public Canvas pauseMenu;
+    private bool paused = false;
 
     // Start is called before the first frame update
     void Start()
     {
         timer = new Timer();
+        pauseMenu.enabled = false;
     }
 
     // Update is called once per frame
@@ -58,8 +61,16 @@ public class GameManager : Singleton<GameManager>
     //True to activate cursor and disable input, false to return
     public void SwitchToUI(bool activateUI)
     {
-        player.enabled = !activateUI;
+        player.paused = activateUI;
         Cursor.lockState = activateUI ? CursorLockMode.None : CursorLockMode.Locked;
+    }
+
+    public void Pause()
+    {
+        paused = !paused;
+        pauseMenu.enabled = paused;
+        SwitchToUI(paused);
+        Time.timeScale = paused ? 0 : 1;
     }
 
     public void ResetCrystals()
@@ -68,5 +79,11 @@ public class GameManager : Singleton<GameManager>
         {
             item.EnableCollect();
         }
+    }
+
+    public void LoadLevel(string levelName)
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene(levelName);
     }
 }

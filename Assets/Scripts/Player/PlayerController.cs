@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     private PlayerInput input;
     private CharacterController character;
     private AnimationManager animationManager;
+    public bool paused = false;
     #region Look
     [Header("Camera")]
     public Camera camera;
@@ -35,6 +36,7 @@ public class PlayerController : MonoBehaviour
     {
         input = new PlayerInput();
         input.Movement.Walk.performed += _ => movement = _.ReadValue<Vector2>();
+        input.Control.Pause.started += _ => GameManager.instance.Pause();
     }
     private void OnEnable()
     {
@@ -94,9 +96,12 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        _Move();
-        _Look();
-        _Animations();
+        if (!paused)
+        {
+            _Move();
+            _Look();
+            _Animations();
+        }
     }
 
     private void _Look()

@@ -16,8 +16,11 @@ public class MainMenuController : MonoBehaviour
 
     IEnumerator ChangeSky()
     {
-        yield return new WaitForSeconds(transitionSpeed);
-        RenderSettings.skybox = skyMats[IncColor(1)];
+        while (this.isActiveAndEnabled)
+        {
+            yield return new WaitForSeconds(transitionSpeed);
+            RenderSettings.skybox = skyMats[IncColor(1)];
+        }
     }
     private int IncColor(int i)
     {
@@ -26,7 +29,7 @@ public class MainMenuController : MonoBehaviour
             currentColor = 0;
         else if ((int)currentColor < 0)
             currentColor = skyMats.Count;
-
+        Debug.Log(currentColor);
         return currentColor;
     }
 
