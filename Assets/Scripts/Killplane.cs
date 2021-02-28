@@ -19,6 +19,7 @@ public class Killplane : MonoBehaviour
         {
             Destroy(other.gameObject);
             Instantiate(playerPrefab, spawnPoint.position, spawnPoint.rotation);
+            GameManager.score = 0;
         }
     }
 
