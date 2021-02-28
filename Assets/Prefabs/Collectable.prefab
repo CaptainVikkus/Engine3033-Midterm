@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 720281069864734787}
   - component: {fileID: 720281069864734797}
   - component: {fileID: 720281069864734786}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Collectable
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -74,7 +74,7 @@ GameObject:
   - component: {fileID: 720281071522888042}
   - component: {fileID: 720281071522888043}
   - component: {fileID: 720281071522888041}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Crystal
   m_TagString: Untagged
   m_Icon: {fileID: 0}

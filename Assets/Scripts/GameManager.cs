@@ -41,6 +41,7 @@ public class GameManager : Singleton<GameManager>
     public TextMeshProUGUI timerUI;
     public TextMeshProUGUI scoreUI;
     public Canvas pauseMenu;
+    public Canvas winMenu;
     private bool paused = false;
 
     // Start is called before the first frame update
@@ -71,6 +72,16 @@ public class GameManager : Singleton<GameManager>
         pauseMenu.enabled = paused;
         SwitchToUI(paused);
         Time.timeScale = paused ? 0 : 1;
+    }
+
+    public void GameWon()
+    {
+        Time.timeScale = 0;
+        SwitchToUI(true);
+        //timerUI.enabled = false;
+        //scoreUI.enabled = false;
+        winMenu.enabled = true;
+
     }
 
     public void ResetCrystals()
