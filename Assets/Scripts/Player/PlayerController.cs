@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour
     #region Look
     [Header("Camera")]
     public Camera camera;
-    public float sensitivity = 100.0f;
+    public float sensitivity = 50.0f;
     private float XRotation;
     #endregion
 
@@ -83,6 +83,12 @@ public class PlayerController : MonoBehaviour
                 RenderSettings.skybox.color = Color.black;
                 break;
         }
+    }
+
+    //Change Camera Sensitivity
+    public void ChangeSensitivity(float newSensitivity)
+    {
+        sensitivity = newSensitivity;
     }
 
     // Start is called before the first frame update
