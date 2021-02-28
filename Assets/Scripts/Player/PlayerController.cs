@@ -46,6 +46,7 @@ public class PlayerController : MonoBehaviour
     {
         ChangeColor((COLOR)(-1));
         input.Disable();
+        Cursor.lockState = CursorLockMode.None;
     }
     void OnDrawGizmos()
     {
